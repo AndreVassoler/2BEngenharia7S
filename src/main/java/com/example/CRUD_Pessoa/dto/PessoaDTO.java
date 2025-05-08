@@ -1,42 +1,68 @@
 package com.example.CRUD_Pessoa.dto;
 
+import java.util.List;
+
 public class PessoaDTO {
 
-    private Long id;
+    private List<UserResult> results;
 
-    private String nome;
-    private String email;
-    private String cidade;
-
-    public Long getId() {
-        return id;
+    public List<UserResult> getResults() {
+        return results;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setResults(List<UserResult> results) {
+        this.results = results;
     }
 
-    public String getNome() {
-        return nome;
+    public static class UserResult {
+        private Name name;
+        private String email;
+        private Location location;
+
+        public Name getName() {
+            return name;
+        }
+
+        public void setName(Name name) {
+            this.name = name;
+        }
+
+        public String getEmail() {
+            return email;
+        }
+
+        public void setEmail(String email) {
+            this.email = email;
+        }
+
+        public Location getLocation() {
+            return location;
+        }
+
+        public void setLocation(Location location) {
+            this.location = location;
+        }
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public static class Name {
+        private String first;
+        private String last;
+
+        public String getFirst() { return first; }
+
+        public void setFirst(String first) { this.first = first; }
+
+        public String getLast() { return last; }
+
+        public void setLast(String last) { this.last = last; }
     }
 
-    public String getEmail() {
-        return email;
+    public static class Location {
+        private String city;
+
+        public String getCity() { return city; }
+
+        public void setCity(String city) { this.city = city; }
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getCidade() {
-        return cidade;
-    }
-
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
-    }
 }
