@@ -3,7 +3,6 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Product } from '../entities/product.entity';
 import axios from 'axios';
-import { firstValueFrom } from 'rxjs';
 
 @Injectable()
 export class ProductService {
@@ -75,7 +74,6 @@ export class ProductService {
     }
   }
 
-  // Local database operations
   async saveToLocalDatabase(product: Product): Promise<Product> {
     try {
       this.logger.log('Saving product to local database');
