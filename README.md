@@ -1,3 +1,6 @@
+Os commit foram feitos nesse repositório: https://github.com/AndreVassoler/2BEngenharia7
+
+
 # API de Produtos NestJS
 
 Esta é uma aplicação NestJS que se integra com a API DummyJSON para realizar operações CRUD em produtos. O projeto oferece uma interface completa para gerenciamento de produtos, combinando dados da API externa com armazenamento local.
