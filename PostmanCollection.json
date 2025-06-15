@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "SUA_ID_DA_COLECAO_AQUI",
+		"name": "Login API Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_collection_link": "https://www.getpostman.com/collections/SUA_ID_DA_COLECAO_AQUI"
+	},
+	"variables": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3001/api",
+			"type": "string"
+		}
+	],
+	"item": [
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"admin\", \"password\": \"admin123\"}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/auth/login",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				},
+				"description": "Login an existing user (admin or regular user)"
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Profile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer SEU_TOKEN_JWT_AQUI",
+						"description": "Obtenha o token JWT do endpoint de login e cole-o aqui",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/auth/profile",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"auth",
+						"profile"
+					]
+				},
+				"description": "Get the profile of the authenticated user. Requires a valid JWT in the Authorization header."
+			},
+			"response": []
+		},
+		{
+			"name": "Check Authentication Status",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer SEU_TOKEN_JWT_AQUI",
+						"description": "Obtenha o token JWT do endpoint de login e cole-o aqui",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/auth/check",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"auth",
+						"check"
+					]
+				},
+				"description": "Check if the current session is authenticated. Requires a valid JWT in the Authorization header."
+			},
+			"response": []
+		}
+	]
+} 
